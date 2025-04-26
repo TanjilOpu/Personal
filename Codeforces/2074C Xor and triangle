@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+void solve()
+{
+    ll x, y, z;
+    cin >> x;
+    for (int i = 0; i <= 30; i++)
+    {
+        y = (1 << i) - 1;                              // using mercent prime concept
+        z = x ^ y;
+        if (x + y > z && y + z > x && x + z > y)
+        {
+            cout << y << endl;
+            return;
+        }
+    }
+    cout << -1 << endl;
+}
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    ll tc;
+    cin >> tc;
+    while (tc--)
+    {
+        solve();
+    }
+}
