@@ -1,22 +1,34 @@
-#include<bits/stdc++.h>
-#define ll long long int
+#include <bits/stdc++.h>
 using namespace std;
+ 
 int main()
 {
-    ll n,m;
-    cin>>n>>m;
-    vector<ll>vn(n);
-    vector<ll>vm(m);
-    for(ll i=0;i<n;i++)
+    int n, m;
+    cin >> n >> m;
+    multiset<int> tickets;
+    for (int i = 0; i < n; i++)
     {
-        cin>>vn[i];
+        int price;
+        cin >> price;
+        tickets.insert(price);
     }
-    for(ll i=0;i<m;i++)
+    for (int i = 0; i < m; i++)
     {
-        cin>>vm[i];
+        int max_price;
+        cin >> max_price;
+ 
+        auto it = tickets.upper_bound(max_price);
+        if (it == tickets.begin())
+        {
+ 
+            cout << -1 << endl;
+        }
+        else
+        {
+            --it;
+            cout << *it << endl;
+            tickets.erase(it);
+        }
     }
-    sort(vn.begin(),vn.end());
-    sort(vm.begin(),vm.end());
-
     return 0;
 }
