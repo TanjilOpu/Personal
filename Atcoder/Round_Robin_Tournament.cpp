@@ -1,4 +1,4 @@
-// problem link :   https://vjudge.net/problem/AtCoder-abc323_b
+// problem link :  https://atcoder.jp/contests/abc323/tasks/abc323_b?lang=en
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long int
